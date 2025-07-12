@@ -1,324 +1,1538 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title  -->
-    <title>กฤษ อุปกรณ์ไฟฟ้า</title>
-
-    <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Style CSS -->
-    <link rel="stylesheet" href="https://github.io/kshop/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
-<style>
-
-body {width: 99%;height:1000px;background-image: linear-gradient(90deg, rgb(88, 167, 214), rgb(162, 79, 230)) ;} .topnav {width: 99%;height:20; overflow: hidden; background-image: linear-gradient(90deg, #b87b14ff, #9e63e7); } .topnav a { float: left; display: block; color: #fbfeff; text-align: center; padding: 6px 8px; text-decoration: none; } .topnav a:hover { background-color: #ddd; color: black; } button { background-color: #04AA6D; font-size: 12px; padding: 4px 8px; border-radius: 2px; color: blue; border: 2px solid #04AA6D; transition-duration: 0.4s; width: 120px; float: left;border: 1px solid green;display: block; } button:hover { box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); } textarea {width: 600px;height: 400px;} input {width:400px;} 
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KritElectroShop - กฤษ อุปกรณ์ไฟฟ้า</title>
+    <style>
+        /* Reset และ Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --gray-color: #94a3b8;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+        }
+        
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+			/* background-color: aqua; */
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .nav-icons i {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-icons i:hover {
+            color: var(--primary-color);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--danger-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .hero-btns .btn {
+            padding: 12px 25px;
+        }
+        
+        .hero-btns .btn-outline {
+            border-color: white;
+            color: white;
+        }
+        
+        .hero-btns .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background-color: #6099e4;
+        }
+        
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: white;
+            border: 1px solid var(--gray-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .old-price {
+            font-size: 1rem;
+            color: var(--gray-color);
+            text-decoration: line-through;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .add-to-cart {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        
+        .wishlist-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f5f9;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .wishlist-btn:hover {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 5px solid var(--light-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-role {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--gray-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 0 25px;
+            border-radius: 0 5px 5px 0;
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #0f172a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            opacity: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .features, .products, .testimonials, .newsletter {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* Cart Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .cart-modal {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            padding: 2rem;
+        }
+        
+        .modal-overlay.active .cart-modal {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--gray-color);
+            transition: color 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--danger-color);
+        }
+        
+        .cart-items {
+            margin-bottom: 2rem;
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cart-item-info h4 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .remove-item {
+            color: var(--danger-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .remove-item:hover {
+            color: #b91c1c;
+        }
+        
+        .cart-summary {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .summary-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 12px;
+            font-size: 1rem;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .empty-cart i {
+            font-size: 3rem;
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+        }
+        
+        .empty-cart p {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <!-- Search Wrapper Area Start -->
-    <div class="search-wrapper section-padding-100">
-        <div class="search-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
-        </div>
+    <!-- Header -->
+    <header>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Wrapper Area End -->
-
-    <!-- ##### Main Content Wrapper Start ##### -->
-    <div class="main-content-wrapper d-flex clearfix">
-
-        <!-- Mobile Nav (max width 767px)-->
-        <div class="mobile-nav">
-            <!-- Navbar Brand -->
-            <div class="amado-navbar-brand">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-            </div>
-            <!-- Navbar Toggler -->
-            <div class="amado-navbar-toggler">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <!-- Header Area Start -->
-        <header class="header-area clearfix">
-            <!-- Close Icon -->
-            <div class="nav-close">
-                <i class="fa fa-close" aria-hidden="true"></i>
-            </div>
-            <!-- Logo -->
-            <div class="logo">
-                <a href="index.html"><img src="https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2F46e50db2-d5b5-4b1b-9da2-bd8dad74d25c/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAH5fCQcs1B4IQK1X5KcgPKJMQjo16ZyC-965X_9U6ZcL&exp=1751921092&osig=AAAAAAAAAAAAAAAAAAAAAIao6ZdMygY4xqFgSycPSS7seKCxoK8QyupoHqeFP7rm&signer=media-rpc&x-canva-quality=screen" style="width:100%;scale:2;" alt=""></a>
-	<h1 style="color:blue;margin-top:100px;text-shadow: 6px 7px 5px rgb(68, 50, 4);
-scale:1.5;">กฤษ</h1>
-	<h3 style="color:red;margin-top:3px;text-shadow: 6px 7px 5px rgb(92, 94, 207);
-scale:1.8;">อุปกรณ์ไฟฟ้า</h3>
-	 
-            </div>
-            <!-- Amado Nav -->
-            <nav class="amado-nav">
-                <ul>
-                    <li class="active"><a href="index.html">หน้าหลัก</a></li>
-                    <li><a href="shop.html">สินค้า</a></li>
-                    <li><a href="product-details.html">Product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-bolt"></i>
+                    กฤษ อุปกรณ์ไฟฟ้า
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#products">สินค้า</a></li>
+                    <li><a href="#features">บริการ</a></li>
+                    <li><a href="#testimonials">รีวิว</a></li>
+                    <li><a href="#contact">ติดต่อเรา</a></li>
                 </ul>
+                
+                <div class="nav-icons">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
-            <!-- Button Group -->
-            <div class="amado-btn-group mt-30 mb-100">
-                <a href="#" class="btn amado-btn mb-15">%Discount%</a>
-                <a href="#" class="btn amado-btn active">New this week</a>
-            </div>
-            <!-- Cart Menu -->
-            <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
-                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
-            </div>
-            <!-- Social Button -->
-            <div class="social-info d-flex justify-content-between">
-                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-        </header>
-        <!-- Header Area End -->
-
-        <!-- Product Catagories Area Start -->
-        <div class="products-catagories-area clearfix">
-            <div class="amado-pro-catagory clearfix">
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://down-th.img.susercontent.com/file/382a198a5b1d1e1d4c59792adc662a04" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>1,266.00</p>
-                            <h4> โคมไฟเพดานโมเดิร์น</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://inwfile.com/s-de/v287gc.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>49,900.00 บาท</p>
-                            <h4>ไฟเพดาน ไฟระย้า คริสตัล เกรดA </h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://inwfile.com/s-de/w6vbaz.png" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>24,900.00 - 49,900.00 บาท </p>
-                            <h4>ไฟระย้า คริสตัล ไฟแขวน ไฟเพดาน ไฟช่อ ไฟกิ่ง 3 balls</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://down-th.img.susercontent.com/file/b52e81b6fd787cd33dfdcda3046d15a9" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $180</p>
-                            <h4>Night Stand</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://www.hiachet.com/wp-content/uploads/2021/12/ปลั๊กสวิตและเต้ารับ-1024x711-1.webp" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>100 - 700 บาท</p>
-                            <h4>NANO​ จัดชุดประกอบสำเร็จสวิทซ์ ปลั๊กแบบมีกราวด์พร้อมบ๊อกลอย</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://down-th.img.susercontent.com/file/sg-11134201-7r98o-lkzht54jdyjcce" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>200 - 900 บาท</p>
-                            <h4>ชุดเต้ารับไฟฟ้าสั่งประกอบได้ดั่งใจคุณ</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://inwfile.com/s-fv/ocu0tp.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>1000 - 8000 บาท</p>
-                            <h4>สายไฟ thw bcc 1.5, 2.5, 4.0, 6.0, 10.0</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://leenapl.com/wp-content/uploads/2022/10/Catalog-PPL-23-24_compressed_%E9%A1%B5%E9%9D%A2_04.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $318</p>
-                            <h4>Modern Rocking Chair</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="https://leenapl.com/wp-content/uploads/2022/10/Catalog-PPL-23-24_compressed_%E9%A1%B5%E9%9D%A2_05.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $318</p>
-                            <h4>Home Deco</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
-        <!-- Product Catagories Area End -->
-    </div>
-    <!-- ##### Main Content Wrapper End ##### -->
+    </header>
 
-    <!-- ##### Newsletter Area Start ##### -->
-    <section class="newsletter-area section-padding-100-0">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Newsletter Text -->
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="newsletter-text mb-100">
-                        <h2>Subscribe for a <span>25% Discount</span></h2>
-                        <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
-                    </div>
-                </div>
-                <!-- Newsletter Form -->
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <div class="newsletter-form mb-100">
-                        <form action="#" method="post">
-                            <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
+            <div class="hero-content">
+                <h1>อุปกรณ์ไฟฟ้าคุณภาพสูง ในราคาที่เหมาะสม</h1>
+                <p>พบกับสินค้าคุณภาพจากแบรนด์ชั้นนำ พร้อมบริการหลังการขายที่มั่นใจได้</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary">ช้อปสินค้า</a>
+                    <a href="#features" class="btn btn-outline">บริการของเรา</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ##### Newsletter Area End ##### -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix">
+    <!-- Features Section -->
+    <section class="features" id="features">
         <div class="container">
-            <div class="row align-items-center">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="single_widget_area">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="https://down-th.img.susercontent.com/file/382a198a5b1d1e1d4c59792adc662a04" alt=""></a>
-                        </div>
-                        <!-- Copywrite Text -->
-                        <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> & Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <h2 class="section-title">บริการของเรา</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
                     </div>
+                    <h3>จัดส่งรวดเร็ว</h3>
+                    <p>จัดส่งสินค้าทั่วประเทศภายใน 1-3 วันทำการ</p>
                 </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="single_widget_area">
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <nav class="navbar navbar-expand-lg justify-content-end">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-                                <div class="collapse navbar-collapse" id="footerNavContent">
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Shop</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="product-details.html">Product</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Cart</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="checkout.html">Checkout</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
+                    <h3>รับประกันสินค้า</h3>
+                    <p>รับประนานสินค้าทุกชิ้น 1-2 ปี ตามเงื่อนไขบริษัท</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>บริการลูกค้า</h3>
+                    <p>ทีมงานพร้อมให้บริการตลอด 24 ชั่วโมง</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>คืนสินค้าง่าย</h3>
+                    <p>สามารถคืนสินค้าได้ภายใน 7 วัน หากมีปัญหา</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">สินค้ายอดนิยม</h2>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-filter="tv">ทีวี</button>
+                <button class="filter-btn" data-filter="audio">เสียง</button>
+                <button class="filter-btn" data-filter="appliance">เครื่องใช้ไฟฟ้า</button>
+                <button class="filter-btn" data-filter="smart">สมาร์ทโฮม</button>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">รีวิวจากลูกค้า</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="testimonial-img">
+                    <p class="testimonial-text">"สินค้ามีคุณภาพดีมาก ได้รับของเร็วตามกำหนด บริการหลังการขายดีมากค่ะ"</p>
+                    <h4 class="testimonial-author">สุภาพร ใจดี</h4>
+                    <p class="testimonial-role">ลูกค้า</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="testimonial-img">
+                    <p class="testimonial-text">"ราคาสินค้าถูกกว่าห้างสรรพสินค้า แถมยังมีโปรโมชั่นดีๆ ให้เลือกลูกค้าตลอด"</p>
+                    <h4 class="testimonial-author">สมชาย มีสุข</h4>
+                    <p class="testimonial-role">ลูกค้า</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-img">
+                    <p class="testimonial-text">"พนักงานให้คำแนะนำดีมาก ช่วยเลือกสินค้าให้เหมาะกับความต้องการของเรา"</p>
+                    <h4 class="testimonial-author">วรรณา สุขใจ</h4>
+                    <p class="testimonial-role">ลูกค้า</p>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>สมัครรับข่าวสารและโปรโมชั่น</h2>
+                <p>สมัครสมาชิกเพื่อรับข่าวสารและโปรโมชั่นพิเศษก่อนใคร</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="อีเมลของคุณ" required>
+                    <button type="submit" class="btn btn-primary">สมัคร</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ElectroShop</h3>
+                    <p>ร้านขายอุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์ครบวงจร ด้วยสินค้าคุณภาพและบริการที่เหนือชั้น</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>เมนู</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">หน้าแรก</a></li>
+                        <li><a href="#products">สินค้า</a></li>
+                        <li><a href="#features">บริการ</a></li>
+                        <li><a href="#testimonials">รีวิว</a></li>
+                        <li><a href="#contact">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>หมวดหมู่</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">ทีวีและจอภาพ</a></li>
+                        <li><a href="#">เครื่องเสียง</a></li>
+                        <li><a href="#">เครื่องใช้ไฟฟ้า</a></li>
+                        <li><a href="#">สมาร์ทโฮม</a></li>
+                        <li><a href="#">อุปกรณ์เสริม</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>ติดต่อเรา</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 ถนนอิเล็กทรอนิกส์ เขตบางนา กรุงเทพฯ</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>02-123-4567</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@electroshop.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 ElectroShop. สงวนลิขสิทธิ์ทุกประการ</p>
+            </div>
+        </div>
     </footer>
-    <!-- ##### Footer Area End ##### -->
 
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="https://github.io/kshop/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="https://github.io/kshop/js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="https://github.io/kshop/js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="https://github.io/kshop/js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="https://github.io/kshop/js/active.js"></script>
+    <!-- Cart Modal -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="cart-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">ตะกร้าสินค้า</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be loaded here -->
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>ตะกร้าสินค้าของคุณว่างเปล่า</p>
+                    <a href="#products" class="btn btn-primary">ช้อปสินค้า</a>
+                </div>
+            </div>
+            
+            <div class="cart-summary" id="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>ยอดรวม</span>
+                    <span id="subtotal">0 ฿</span>
+                </div>
+                <div class="summary-row">
+                    <span>ค่าจัดส่ง</span>
+                    <span>50 ฿</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>รวมทั้งหมด</span>
+                    <span id="total">50 ฿</span>
+                </div>
+                
+                <button class="btn btn-primary checkout-btn">ชำระเงิน</button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % testimonials.length;
+            showSlide(nextSlide);
+        }, 5000);
+        
+        // Product Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Filter products
+                const filter = button.dataset.filter;
+                filterProducts(filter);
+            });
+        });
+        
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                title: 'ปลั๊กไฟ',
+                category: 'Plug',
+                price: 21900,
+                oldPrice: 24900,
+                image: 'https://www.thaiwatsadu.com/_next/image?url=https%3A%2F%2Fpim.thaiwatsadu.com%2FTWDPIM%2Fweb%2FThumbnail%2FImage%2F0202%2F60314415.jpg&w=640&q=75',
+                badge: 'ลดราคา'
+            },
+            {
+                id: 2,
+                title: 'สวิตช์ไฟ',
+                category: 'swicth',
+                price: 10990,
+                oldPrice: 12990,
+                image: 'https://lh4.googleusercontent.com/cunn_SD135e819dUa_ZaVtDyms_evThjOrlyDFrUZvuvMSEDAa3M2FoNTNXiMOac1lYK_V8_RCgPu5Kul3HslQ1BD_h2tk-_znQUo_X095x4yZ1cYk10iQNIjYH5erxzdGOAC3T8=s1600',
+                badge: 'ใหม่'
+            },
+            {
+                id: 3,
+                title: 'สายไฟ',
+                category: 'wire',
+                price: 15990,
+                oldPrice: 17990,
+                image: 'https://th-test-11.slatic.net/p/265ef8ed76e5df14167a3ba797c9bb1a.jpg',
+                badge: 'ขายดี'
+            },
+            {
+                id: 4,
+                title: 'ท่อร้อยสายไฟฟ้า',
+                category: 'pipe',
+                price: 3490,
+                image: 'https://image.makewebeasy.net/makeweb/m_1920x0/H9bmOtNQt/DefaultData/MALL_%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B_1_71.jpg?v=202405291424',
+                badge: 'มาใหม่'
+            },
+            {
+                id: 5,
+                title: 'ทีวี LG OLED 65 นิ้ว',
+                category: 'tv',
+                price: 45900,
+                oldPrice: 49900,
+                image: 'https://www.lg.com/th/images/tvs/md07528923/gallery/medium01.jpg',
+                badge: 'ลดแรง'
+            },
+            {
+                id: 6,
+                title: 'ลำโพง JBL PartyBox 310',
+                category: 'audio',
+                price: 23900,
+                image: 'https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw9c6d1a1b/JBL_PartyBox_310_Hero_Blue_003.png?sw=535&sh=535',
+                badge: 'ขายดี'
+            },
+            {
+                id: 7,
+                title: 'ตู้เย็น Samsung Side by Side 615L',
+                category: 'appliance',
+                price: 32900,
+                oldPrice: 35900,
+                image: 'https://images.samsung.com/is/image/samsung/p6pim/th/rs62r5001m9-fa/gallery/th-side-by-side-rs62r5001m9-rs62r5001m9-fa-532709094?$650_519_PNG$',
+                badge: 'โปรโมชั่น'
+            },
+            {
+                id: 8,
+                title: 'กล้องวงจรปิด Xiaomi 360',
+                category: 'smart',
+                price: 1290,
+                image: 'https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1641447304.4826765.png',
+                badge: 'ลดราคา'
+            }
+        ];
+        
+        // Display Products
+        function displayProducts(productsToShow) {
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = '';
+            
+            if (productsToShow.length === 0) {
+                productsGrid.innerHTML = '<p class="no-products">ไม่พบสินค้าในหมวดหมู่นี้</p>';
+                return;
+            }
+            
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.title}">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">${getCategoryName(product.category)}</p>
+                        <h3 class="product-title">${product.title}</h3>
+                        <div class="product-price">
+                            <span class="current-price">${product.price.toLocaleString()} ฿</span>
+                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice.toLocaleString()} ฿</span>` : ''}
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="${product.id}">เพิ่มในตะกร้า</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to add to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+        }
+        
+        // Get category name in Thai
+        function getCategoryName(category) {
+            const categories = {
+                'tv': 'ทีวีและจอภาพ',
+                'audio': 'เครื่องเสียง',
+                'appliance': 'เครื่องใช้ไฟฟ้า',
+                'smart': 'สมาร์ทโฮม'
+            };
+            return categories[category] || category;
+        }
+        
+        // Filter products by category
+        function filterProducts(category) {
+            if (category === 'all') {
+                displayProducts(products);
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => product.category === category);
+            displayProducts(filteredProducts);
+        }
+        
+        // Initialize products
+        displayProducts(products);
+        
+        // Cart functionality
+        let cart = [];
+        
+        // Add to cart
+        function addToCart(e) {
+            const productId = parseInt(e.target.dataset.id);
+            const product = products.find(p => p.id === productId);
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showCartNotification(product.title);
+        }
+        
+        // Show notification when item added to cart
+        function showCartNotification(productName) {
+            const notification = document.createElement('div');
+            notification.className = 'cart-notification';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${productName} ถูกเพิ่มในตะกร้าแล้ว</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+            
+            // Add styles for notification
+            const style = document.createElement('style');
+            style.textContent = `
+                .cart-notification {
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: var(--success-color);
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1000;
+                }
+                
+                .cart-notification.show {
+                    opacity: 1;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            const cartCount = document.querySelector('.cart-count');
+            cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            // Show/hide empty cart message
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>ตะกร้าสินค้าของคุณว่างเปล่า</p>
+                        <a href="#products" class="btn btn-primary">ช้อปสินค้า</a>
+                    </div>
+                `;
+                cartSummary.style.display = 'none';
+            } else {
+                // Display cart items
+                cartItems.innerHTML = '';
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                        <div class="cart-item-info">
+                            <h4>${item.title}</h4>
+                            <p class="cart-item-price">${item.price.toLocaleString()} ฿</p>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                        </div>
+                        <div class="remove-item" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Calculate totals
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const total = subtotal + 50; // 50฿ shipping
+                
+                document.getElementById('subtotal').textContent = `${subtotal.toLocaleString()} ฿`;
+                document.getElementById('total').textContent = `${total.toLocaleString()} ฿`;
+                
+                cartSummary.style.display = 'block';
+                
+                // Add event listeners to quantity buttons
+                document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                    button.addEventListener('click', decreaseQuantity);
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                    button.addEventListener('click', increaseQuantity);
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', removeItem);
+                });
+            }
+        }
+        
+        // Decrease item quantity
+        function decreaseQuantity(e) {
+            const productId = parseInt(e.target.dataset.id);
+            const item = cart.find(item => item.id === productId);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== productId);
+            }
+            
+            updateCart();
+        }
+        
+        // Increase item quantity
+        function increaseQuantity(e) {
+            const productId = parseInt(e.target.dataset.id);
+            const item = cart.find(item => item.id === productId);
+            item.quantity += 1;
+            updateCart();
+        }
+        
+        // Remove item from cart
+        function removeItem(e) {
+            const productId = parseInt(e.target.closest('.remove-item').dataset.id);
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+        
+        // Cart modal toggle
+        const cartIcon = document.getElementById('cart-icon');
+        const cartModal = document.getElementById('cart-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        cartIcon.addEventListener('click', () => {
+            cartModal.classList.add('active');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.classList.remove('active');
+            }
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = newsletterForm.querySelector('input');
+            const email = emailInput.value.trim();
+            
+            if (email) {
+                alert(`ขอบคุณที่สมัครรับข่าวสาร! เราจะส่งโปรโมชั่นไปที่ ${email}`);
+                emailInput.value = '';
+            }
+        });
+    </script>
 </body>
-
 </html>
