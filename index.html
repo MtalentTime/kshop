@@ -26,8 +26,8 @@
         }
         
         body {
-            background-color: #4aeda;
-            color: var(--dark-color);
+            background-color: #4ae9da;
+            color: var(--gray-color);
             line-height: 1.6;
         }
         
@@ -54,6 +54,9 @@
         }
 		
 		.css-3d-text { font-size: 71px; color: #076eff; font-family: "Arial Black", Gadget, sans-serif; text-shadow: 0px 0px 0 rgb(-1,102,247), -1px 1px 0 rgb(-9,94,239), -2px 2px 0 rgb(-16,87,232), -3px 3px 0 rgb(-24,79,224), -4px 4px 0 rgb(-32,71,216), -5px 5px 0 rgb(-40,63,208), -6px 6px 0 rgb(-47,56,201), -7px 7px 0 rgb(-55,48,193), -8px 8px 0 rgb(-63,40,185), -9px 9px 0 rgb(-71,32,177), -10px 10px 0 rgb(-78,25,170), -11px 11px 0 rgb(-86,17,162), -12px 12px 0 rgb(-94,9,154), -13px 13px 0 rgb(-102,1,146), -14px 14px 13px rgba(28,219,92,0.48), -14px 14px 1px rgba(28,219,92,0.5), 0px 0px 13px rgba(28,219,92,.2); }
+		
+ 
+ 
         
         .btn {
             display: inline-block;
@@ -71,19 +74,20 @@
         }
         
         .btn-primary:hover {
-            background-color: var(--secondary-color);
+background-color: yellow;color: blue;
             transform: translateY(-2px);
+			
         }
         
         .btn-outline {
             background-color: transparent;
             border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            color: red;
         }
         
         .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: yellow;
+            color: red;
         }
         
         .section-title {
@@ -123,7 +127,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #67fd00;
+            color: #67fd00;;
             display: flex;
             align-items: center;
         }
@@ -197,16 +201,29 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2563eb, #3b82f6);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
+		
+		
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
         
         .hero h1 {
             font-size: 3rem;
@@ -859,13 +876,47 @@
         .empty-cart p {
             margin-bottom: 1.5rem;
         }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		#img1 {width:200px; height: auto;margin-left: 400px;position:absolute;}
+#bot-mascot {width:800px; height: 600px;}
+ .chat-input { background-color: gray;color: blue;} 
+#t1 {width:200px;color:red;font-size:20px;}
+ </style>
+ 
+ <script src="https://cdn.tailwindcss.com"></script>
+ 
+<script>
+
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            accent: '#67fd00',
+          },
+          fontFamily: {
+            prompt: ['Prompt', 'sans-serif'],
+          },
+        },
+      }
+    }
+	
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;800&display=swap" rel="stylesheet"/>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+ 
+  <style>
+   #bot-mascot { position: fixed; bottom: 20px; right: 20px; width: 100px; height: 100px; z-index: 9999; cursor: pointer; transition: transform 0.3s ease; } #bot-mascot:hover { transform: scale(1.1) rotate(2deg); } #chat-box { position: fixed; bottom: 140px; right: 40px; width: 300px; background-color: #b79b9b; border: 2px solid #000; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; z-index: 9998; } #chat-box.hidden { display: none; } #chat-response { font-size: 0.9rem; color: #333; margin-bottom: 10px; } #chat-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; } #t1 { display: none; } .slideshow { width: 100%; height: 400px; overflow: hidden; position: relative; } .slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; } .slideshow img.active { opacity: 1; z-index: 1; }
+  </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
+ <header>
+ 
+<!-- ปุ่มเปิด/ปิดบอท -->
+ 
+		
             <nav class="navbar">
                 <a href="#" class="logo">
                     <i class="fas fa-bolt"></i>
@@ -897,8 +948,89 @@
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
-        </div>
+       
     </header>
+	
+<section class="slideshow" id="home">
+    <img src="https://picsum.photos/id/1015/1200/400" class="active" alt="slide1">
+    <img src="https://picsum.photos/id/1016/1200/400" alt="slide2">
+    <img src="https://picsum.photos/id/1018/1200/400" alt="slide3">
+  </section>
+<div id="bot-mascot">
+    <img src="https://miro.medium.com/v2/resize:fit:1200/1*9I6EIL5NG20A8se5afVmOg.gif" alt="KritBot" style="width:100%;height:auto;scale:2;"/>
+  </div>
+
+  <div id="chat-box" class="hidden">
+    <div class="font-bold text-primary mb-2">🤖 KritBot</div>
+    <div id="chat-response">สวัสดีครับ มีอะไรให้ช่วยไหมครับ?</div>
+    <input type="text" id="chat-input" placeholder="พิมพ์ข้อความ...">
+  </div>
+<p id="song" style="display:none;">
+<iframe src="https://suno.com/embed/2cbf7859-434e-435d-857d-be4caa669245" width="760" height="240"><a href="https://suno.com/song/2cbf7859-434e-435d-857d-be4caa669245">Listen on Suno</a></iframe>
+</p>
+  <textarea id="t1"></textarea>
+
+ 
+ <script>
+    const mascot = document.getElementById('bot-mascot');
+    const chatBox = document.getElementById('chat-box');
+
+    mascot.addEventListener('click', () => {
+      chatBox.classList.toggle('hidden');
+      botsay();
+      bottalk();
+    });
+
+    function botsay() {
+      const saybox = document.getElementById("t1");
+      const wordset = [
+        "ยินดีต้อนรับเข้าสู่ร้าน KritShop!",
+        "สนใจปลั๊กไฟ สวิตช์ หรือสายไฟไหมครับ?",
+        "มีอะไรให้ KritBot ช่วยไหมครับ?",
+        "วันนี้มีสินค้าลดราคานะครับ ลองดูที่หน้าสินค้าได้เลย!",
+        "อย่าลืมแอดไลน์เรานะครับ @kritshop"
+      ];
+      const msg = wordset[Math.floor(Math.random() * wordset.length)];
+      saybox.value = msg;
+    }
+
+    function bottalk() {
+      const talk1 = document.getElementById("t1").value;
+      const utterance = new SpeechSynthesisUtterance(talk1);
+      utterance.lang = "th-TH";
+      speechSynthesis.speak(utterance);
+    }
+
+    const chatInput = document.getElementById("chat-input");
+    const chatResponse = document.getElementById("chat-response");
+
+    chatInput.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        const msg = chatInput.value.toLowerCase();
+        let reply = "ขออภัยครับ KritBot ยังไม่เข้าใจ ลองพิมพ์คำใหม่อีกครั้งได้นะครับ";
+
+        if (msg.includes("ส่งของ")) reply = "🚚 เราจัดส่งสินค้าภายใน 1-3 วันทำการทั่วประเทศครับ!";
+        else if (msg.includes("ราคา") || msg.includes("โปรโมชั่น")) reply = "💥 สินค้าโปรโมชั่นมีหลายรายการ คลิกที่ 'สินค้าแนะนำ' ด้านบนได้เลยครับ!";
+        else if (msg.includes("ติดต่อ")) reply = "📞 ติดต่อเราได้ที่เบอร์ 068-442-7933 หรือ LINE: @kritshop ครับ";
+
+        chatResponse.textContent = reply;
+        const botVoice = new SpeechSynthesisUtterance(reply);
+        botVoice.lang = 'th-TH';
+        speechSynthesis.speak(botVoice);
+
+        chatInput.value = '';
+      }
+    });
+	
+	  // Slideshow Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slideshow img");
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 4000);
+  </script>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -957,7 +1089,7 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">สินค้ายอดนิยม</h2>
+            <h2 class="section-title">สินค้าแนะนำ</h2>
             
             <div class="product-filters">
                 <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
@@ -977,7 +1109,23 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title">รีวิวจากลูกค้า</h2>
-            
+ <div class="fb-page"
+  data-href="https://www.facebook.com/mtalenttime"
+  data-tabs="timeline"
+  data-width="500"
+  data-height="600"
+  data-small-header="false"
+  data-adapt-container-width="true"
+  data-hide-cover="false"
+  data-show-facepile="true">
+  <blockquote cite="https://www.facebook.com/mtalenttime" class="fb-xfbml-parse-ignore">
+    <a href="https://www.facebook.com/mtalenttime">KritShop</a>
+  </blockquote>
+</div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0">
+</script>           
             <div class="testimonials-slider">
                 <div class="testimonial active">
                     <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="testimonial-img">
@@ -1028,7 +1176,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>ElectroShop</h3>
+                    <h3>Electric Shop</h3>
                     <p>ร้านขายอุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์ครบวงจร ด้วยสินค้าคุณภาพและบริการที่เหนือชั้น</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1071,8 +1219,7 @@
                         <span>068-442-7933</span>
                     </div>
                     <div class="contact-info">
-                        <i class="fas fa-envelope">Official Site</i> 
-                    </div>					<br><br>
+<i class="fas fa-envelope">Official Site</i></div><br><br>
  <span><i class="fas fa-envelope" style="font-size:10px;"> - https://mtalenttime.github.io/kshop/</i></span>
                 </div>
             </div>
@@ -1090,7 +1237,10 @@
                 <h3 class="modal-title">ตะกร้าสินค้า</h3>
                 <button class="close-modal" id="close-modal">&times;</button>
             </div>
-            
+
+ 
+
+ 
             <div class="cart-items" id="cart-items">
                 <!-- Cart items will be loaded here -->
                 <div class="empty-cart">
@@ -1119,7 +1269,48 @@
         </div>
     </div>
 
-    <script>
+<script>
+ 
+ 
+ 
+
+function botspeak() {
+var talkbot = document.getElementById('t1').value;
+var utterance = new SpeechSynthesisUtterance(talkbot);
+utterance.lang = 'th-TH';
+speechSynthesis.speak(utterance); 
+}
+ 
+ 
+function botsay() {
+var saybox = document.getElementById('t1');
+var arrayone = ['ตั้งแต่', 'เรา', 'ร้างลา', 'จาก', 'กัน', 'ไกล', 'ตั้งแต่', 'วันที่', 'เธอ'];
+var arraytwo = ['ในวันนี้', 'ความรู้สึก', 'ดีดี', 'กลับมา', 'อีกที', 'อยากให้', 'เธอ ', 'รู้ไว้', 'ว่าฉัน'];
+var arraythree = ['ไม่เหงา', 'เดียวดาย', 'อยู่อย่าง', 'นี้', 'เปลี่ยนใจ', 'เธอได้', 'ชีวิต ', 'คงดี', 'กว่า'];
+var arrayfour = ['อยู่ทุกวัน', 'แต่', 'ภาพ', 'เธอ', 'มา', 'กวนใจ',  'ทำ', 'ให้', 'ฉัน', 'คนนี้'];
+
+var arrayone1 = arrayone[Math.floor(Math.random() * arrayone.length)];
+var arraytwo2 = arraytwo[Math.floor(Math.random() * arraytwo.length)];
+saybox.value = arrayone1;
+bottalk(); 
+}
+
+function bottalk() { 
+var talk1 = document.getElementById('t1').value;
+var utterance = new SpeechSynthesisUtterance(talk1);
+utterance.lang = 'th-TH';
+speechSynthesis.speak(utterance);  
+setTimeout('500', 'botsay()');
+}
+ 
+ 
+function readElement() {
+var utterance = new SpeechSynthesisUtterance(say);
+utterance.lang = 'th-TH';
+speechSynthesis.speak(utterance); 
+}
+
+ 
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -1156,7 +1347,7 @@
         // Testimonial Slider
         const testimonials = document.querySelectorAll('.testimonial');
         const dots = document.querySelectorAll('.slider-dot');
-        let currentSlide = 0;
+        let currentSlide = 1;
         
         function showSlide(index) {
             testimonials.forEach(testimonial => testimonial.classList.remove('active'));
@@ -1175,7 +1366,7 @@
         setInterval(() => {
             let nextSlide = (currentSlide + 1) % testimonials.length;
             showSlide(nextSlide);
-        }, 5000);
+        }, 500);
         
         // Product Filter
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1234,38 +1425,39 @@
             },
             {
                 id: 5,
-                title: 'โคมไฟดาวน์ไลท์ ทุกรูปแบบ',
-                category: 'tv',
-                price: 45900,
-                oldPrice: 49900,
-                image: 'https://www.lg.com/th/images/tvs/md07528923/gallery/medium01.jpg',
+                title: 'โคมดาวน์ไลท์ ทุกรูปแบบ',
+                category: 'Light',
+                price: 150,
+                oldPrice: 240,
+                image: 'https://img.lazcdn.com/g/p/5b2b0ce0c88b291a4e3595e5f901d472.jpg_720x720q80.jpg',
                 badge: 'ลดแรง'
             },
             {
                 id: 6,
-                title: 'ลำโพง JBL PartyBox 310',
-                category: 'audio',
-                price: 23900,
-                image: 'https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw9c6d1a1b/JBL_PartyBox_310_Hero_Blue_003.png?sw=535&sh=535',
+                title: 'ไฟเส้นLED Strip Light LED',
+                category: 'Light',
+                price: 300,
+                image: 'https://inwfile.com/s-cx/k3ytxl.jpg',
                 badge: 'ขายดี'
             },
             {
                 id: 7,
-                title: 'ตู้เย็น Samsung Side by Side 615L',
-                category: 'appliance',
-                price: 32900,
-                oldPrice: 35900,
-                image: 'https://images.samsung.com/is/image/samsung/p6pim/th/rs62r5001m9-fa/gallery/th-side-by-side-rs62r5001m9-rs62r5001m9-fa-532709094?$650_519_PNG$',
-                badge: 'โปรโมชั่น'
+                title: ' schneider ตู้คอนซูมเมอร์กันดูด ',
+                category: 'consumer unit',
+                price: 1900,
+                oldPrice: 2400,
+                image: 'https://cf.shopee.co.th/file/th-11134207-7rasc-m9bczbdixnn2c4',
+                badge: 'ลดแรง'
             },
             {
                 id: 8,
-                title: 'กล้องวงจรปิด Xiaomi 360',
+                title: 'Smart Home อัจฉริยะ ',
                 category: 'smart',
                 price: 1290,
-                image: 'https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1641447304.4826765.png',
+                image: 'https://static.pruksa.com/รู้จัก-Smart-Home-บ้านอัจฉริย-3b2a4ee0-8ce0-4069-aac6-c717178c33aa.jpeg',
                 badge: 'ลดราคา'
             }
+			 
         ];
         
         // Display Products
@@ -1284,7 +1476,7 @@
                 productCard.innerHTML = `
                     <div class="product-img">
                         <img src="${product.image}" alt="${product.title}">
-                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''; }
                     </div>
                     <div class="product-info">
                         <p class="product-category">${getCategoryName(product.category)}</p>
@@ -1389,7 +1581,7 @@
                     left: 50%;
                     transform: translateX(-50%);
                     background-color: var(--success-color);
-                    color: white;
+                    color: red;
                     padding: 12px 20px;
                     border-radius: 5px;
                     display: flex;
@@ -1532,10 +1724,14 @@
             const email = emailInput.value.trim();
             
             if (email) {
-                alert(`ขอบคุณที่สมัครรับข่าวสาร! เราจะส่งโปรโมชั่นไปที่ ${email}`);
-                emailInput.value = '';
+var eletter = `ขอบคุณที่สมัครรับข่าวสาร! เราจะส่งโปรโมชั่นไปที่ ${email}`;
+                emailInput.value = eletter;
             }
         });
+		
+// chat bot 
+
+
     </script>
 </body>
-</html>
+</html> 
