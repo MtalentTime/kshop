@@ -906,7 +906,8 @@ background-color: yellow;color: blue;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
  
   <style>
-   #bot-mascot { position: fixed; bottom: 20px; right: 20px; width: 100px; height: 100px; z-index: 9999; cursor: pointer; transition: transform 0.3s ease; } #bot-mascot:hover { transform: scale(1.1) rotate(2deg); } #chat-box { position: fixed; bottom: 140px; right: 40px; width: 300px; background-color: #b79b9b; border: 2px solid #000; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; z-index: 9998; } #chat-box.hidden { display: none; } #chat-response { font-size: 0.9rem; color: #333; margin-bottom: 10px; } #chat-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; } #t1 { display: none; } .slideshow { width: 100%; height: 400px; overflow: hidden; position: relative; } .slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; } .slideshow img.active { opacity: 1; z-index: 1; }
+   #bot-mascot { position: fixed; bottom: 20px; right: 20px; width: 100px; height: 100px; z-index: 9999; cursor: pointer; transition: transform 0.3s ease; } #bot-mascot:hover { transform: scale(1.1) rotate(2deg); } #chat-box { position: fixed; bottom: 140px; right: 40px; width: 300px; background-color: #b79b9b; border: 2px solid #000; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; z-index: 9998; } #chat-box.hidden { display: none; } #chat-response { font-size: 0.9rem; color: #333; margin-bottom: 10px; } #chat-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; } #t1 { display: none; } .slideshow { width: 100%; height: 400px; overflow: hidden; position: relative; } .slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; } .slideshow img.active { opacity: 1; z-index: 1; }   
+iframe#suno-audio {display: none;}
   </style>
 </head>
 <body>
@@ -967,7 +968,7 @@ background-color: yellow;color: blue;
 <iframe src="https://suno.com/embed/2cbf7859-434e-435d-857d-be4caa669245" width="760" height="240"><a href="https://suno.com/song/2cbf7859-434e-435d-857d-be4caa669245">Listen on Suno</a></iframe>
 </p>
   <textarea id="t1"></textarea>
-
+<iframe id="suno-audio" src="" width="0" height="0" allow="autoplay"></iframe>
  
  <script>
  
@@ -1010,6 +1011,11 @@ var know = ['ระบบไฟฟ้าแรงสูง คือ ระบ�
 var getknow = know[Math.floor(Math.random() * know.length)];		 
 sayknow.value = getknow;
 setTimeout('bottalk()', '5000');		 
+}
+
+function opensong() {
+ var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
+document.getElementById('suno-audio').src = linksong;
 }
 
     const chatInput = document.getElementById("chat-input");
