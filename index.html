@@ -915,7 +915,7 @@ iframe#suno-audio {display: none;}
  <header> 
 <!-- ปุ่มเปิด/ปิดบอท -->
  
-            <nav class="navbar">
+           <nav class="navbar">
                 <a href="#" class="logo">
                     <i class="fas fa-bolt"></i>
                     <div class="css-3d-text">กฤษ</div> 
@@ -956,7 +956,7 @@ iframe#suno-audio {display: none;}
     <img src="https://inwfile.com/s-fl/te3vge.jpg" alt="slide3">
   </section>
 <div id="bot-mascot">
-    <img src="https://miro.medium.com/v2/resize:fit:1200/1*9I6EIL5NG20A8se5afVmOg.gif" alt="KritBot" style="width:100%;height:auto;scale:2;" onclick="opensong()"/>
+    <img src="https://miro.medium.com/v2/resize:fit:1200/1*9I6EIL5NG20A8se5afVmOg.gif" alt="KritBot" style="width:100%;height:auto;scale:2;" onclick="opensong()" ondblclick="openframesong()"/>
   </div>
 
   <div id="chat-box" class="hidden">
@@ -1015,18 +1015,27 @@ sayknow.value = getknow;
 
 function opensong() {
 var framer = document.getElementById('suno-audio');
- var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
  var taparadox = 'https://files2.heygen.ai/aws_pacific/avatar_tmp/05aa79d83a9440c3bcfc70d84a02b2c3/d1c3608cac374d6d83f130f41ba29105.mp4?Expires=1753156142&Signature=LrBBS-0EK-n4xaA32F7zGenN-HYYSH1yHlHzY2uRf44COnVJy7-21ZJS4VVn6eGgBODRdNo5QParCcozx8Tx2r-VLEJUGKDOwhyF3DINrYWF-fOYYTvWAOGfhCTLGmaHO~2O2lzD5E5otYDQ6HpzpPBJGw-fsILxsDat8xVPeuoYdz1Evl0P-6g1nmzc8hd7ckpv1RhfK7x0wWKCnP~oI0eHnwDRg0wGmFVBHwNh3WJRXIB7weJ1oU-E93VNWQlw6ofgKUv3jKBJii5BNX8-1OtQffRioBZkE6bE2mC1ZhhG6zz-hwtoQiplIryBE7RL-GLo3uh-JM76Yyn31l80eA__&Key-Pair-Id=K38HBHX5LX3X2H';
  
 framer.style.display = 'block'; 
 framer.src = taparadox;
-setTimeout('closesong()', '12000');
+setTimeout('closesong()', '8000');
+}
+
+function openframesong() {
+ var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
+var openf = document.getElementById('suno-audio');
+
+openf.style.display = 'block'; 
+openf.src = linksong;
+setTimeout('closesong()', '8000');
 }
 
 function closesong() {
+ var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
  var closeframer = document.getElementById('suno-audio').style; 
  closeframer.display = 'none';
-setTimeout('botsay()', '12000'); 
+setTimeout('botsay()', '8000'); 
 }
 
 
