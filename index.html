@@ -53,7 +53,7 @@
 			/* background-color: aqua; */
         }
 		
-		.css-3d-text { font-size: 71px; color: #076eff; font-family: "Arial Black", Gadget, sans-serif; text-shadow: 0px 0px 0 rgb(-1,102,247), -1px 1px 0 rgb(-9,94,239), -2px 2px 0 rgb(-16,87,232), -3px 3px 0 rgb(-24,79,224), -4px 4px 0 rgb(-32,71,216), -5px 5px 0 rgb(-40,63,208), -6px 6px 0 rgb(-47,56,201), -7px 7px 0 rgb(-55,48,193), -8px 8px 0 rgb(-63,40,185), -9px 9px 0 rgb(-71,32,177), -10px 10px 0 rgb(-78,25,170), -11px 11px 0 rgb(-86,17,162), -12px 12px 0 rgb(-94,9,154), -13px 13px 0 rgb(-102,1,146), -14px 14px 13px rgba(28,219,92,0.48), -14px 14px 1px rgba(28,219,92,0.5), 0px 0px 13px rgba(28,219,92,.2); }
+		.css-3d-text { font-size: 41px; color: #076eff; font-family: "Arial Black", Gadget, sans-serif; text-shadow: 0px 0px 0 rgb(-1,102,247), -1px 1px 0 rgb(-9,94,239), -2px 2px 0 rgb(-16,87,232), -3px 3px 0 rgb(-24,79,224), -4px 4px 0 rgb(-32,71,216), -5px 5px 0 rgb(-40,63,208), -6px 6px 0 rgb(-47,56,201), -7px 7px 0 rgb(-55,48,193), -8px 8px 0 rgb(-63,40,185), -9px 9px 0 rgb(-71,32,177), -10px 10px 0 rgb(-78,25,170), -11px 11px 0 rgb(-86,17,162), -12px 12px 0 rgb(-94,9,154), -13px 13px 0 rgb(-102,1,146), -14px 14px 13px rgba(28,219,92,0.48), -14px 14px 1px rgba(28,219,92,0.5), 0px 0px 13px rgba(28,219,92,.2); }
 		 
         .btn {
             display: inline-block;
@@ -972,7 +972,7 @@ iframe#suno-audio {display: none;}
  
  <script>
  
- onload = setTimeout('botsay()', '100');
+ onload = botsay()​;
  
     const mascot = document.getElementById('bot-mascot');
     const chatBox = document.getElementById('chat-box');
@@ -1009,12 +1009,14 @@ var sayknow = document.getElementById("t1");
 var know = ['ระบบไฟฟ้าแรงสูง คือ ระบบไฟฟ้าที่มีแรงดันไฟฟ้า เกิน 1,000 โวลท์', ' ระบบไฟฟ้าแรงต่ำ คือ ระบบไฟฟ้าที่มีแรงดันไฟฟ้าไม่เกิน 1,000 โวลท์', ' โวลท์ (Volt.) คือ หน่วยวัดแรงดันไฟฟ้า', ' แอมแปร์ ( Amp.) คือ หน่วยวัดกระแสไฟฟ้า', ' วัตต์ (Watt.) คือ หน่วยของกำลังไฟฟ้าที่ใช้จริง', ' หน่วย (Unit) คือ หน่วยของกำลังไฟฟ้าที่ใช้ ต่อชั่วโมง มีอุปกรณ์ที่ใช้วัด คือ กิโลวัตต์ฮอร์มิเตอร์', 'ระบบ 1 เฟส จะมี 2 สายในระบบ ประกอบด้วย สาย LINE มีไฟ 1 เส้น และสาย Neutral ไม่มีไฟ 1 เส้น มีแรงดันไฟฟ้า 220 – 230 โวลท์ มีความถี่ 50 เฮิร์ซ Hz', ' ระบบ 3 เฟส จะมี 4 สายในระบบ ประกอบด้วย สาย LINE มีไฟ 3 เส้น และสายนิวตรอน ไม่มีไฟ 1 เส้น มีแรงดันไฟฟ้าระหว่าง สาย LINE กับ LINE 380 – 400 โวลท์ และแรงดันไฟฟ้าระหว่างสาย LINE กับ Neutral 220 – 230 โวลท์ และมีความถี่ 50 เฮิร์ซ Hz เช่นเดียวกัน', ' สายดิน หรือ GROUND มีทั้ง 2 ระบบ ติดตั้งเข้าไปในระบบเพื่อความปลอดภัยของระบบ สายดินจะต้องต่อเข้าไปกับพื้นโลก ตามมาตรฐานกำหนด'];		  
 var getknow = know[Math.floor(Math.random() * know.length)];		 
 sayknow.value = getknow;
-setTimeout('bottalk()', '5000');		 
+
 }
 
 function opensong() {
  var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
 document.getElementById('suno-audio').src = linksong;
+
+setTimeout('botsay()', '5000');		 
 }
 
     const chatInput = document.getElementById("chat-input");
