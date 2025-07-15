@@ -979,7 +979,6 @@ iframe#suno-audio {display: none;}
 
     mascot.addEventListener('click', () => {
       chatBox.classList.toggle('hidden');
- bottalk();
     });
 
     function botsay() {
@@ -1002,7 +1001,7 @@ iframe#suno-audio {display: none;}
       const utterance = new SpeechSynthesisUtterance(talk1);
       utterance.lang = "th-TH";
       speechSynthesis.speak(utterance);
-	  setTimeout('botknow()', '5000');
+	  setTimeout('opensong()', '5000');
     }
 	
 function botknow() {	
