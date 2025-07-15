@@ -50,10 +50,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
-			background-color: aqua;
+			/* background-color: aqua; */
         }
 		
-		.css-3d-text { font-size: 41px; color: #076eff; font-family: "Arial Black", Gadget, sans-serif; text-shadow: 0px 0px 0 rgb(-1,102,247), -1px 1px 0 rgb(-9,94,239), -2px 2px 0 rgb(-16,87,232), -3px 3px 0 rgb(-24,79,224), -4px 4px 0 rgb(-32,71,216), -5px 5px 0 rgb(-40,63,208), -6px 6px 0 rgb(-47,56,201), -7px 7px 0 rgb(-55,48,193), -8px 8px 0 rgb(-63,40,185), -9px 9px 0 rgb(-71,32,177), -10px 10px 0 rgb(-78,25,170), -11px 11px 0 rgb(-86,17,162), -12px 12px 0 rgb(-94,9,154), -13px 13px 0 rgb(-102,1,146), -14px 14px 13px rgba(28,219,92,0.48), -14px 14px 1px rgba(28,219,92,0.5), 0px 0px 13px rgba(28,219,92,.2); }
+		.css-3d-text { font-size: 71px; color: #076eff; font-family: "Arial Black", Gadget, sans-serif; text-shadow: 0px 0px 0 rgb(-1,102,247), -1px 1px 0 rgb(-9,94,239), -2px 2px 0 rgb(-16,87,232), -3px 3px 0 rgb(-24,79,224), -4px 4px 0 rgb(-32,71,216), -5px 5px 0 rgb(-40,63,208), -6px 6px 0 rgb(-47,56,201), -7px 7px 0 rgb(-55,48,193), -8px 8px 0 rgb(-63,40,185), -9px 9px 0 rgb(-71,32,177), -10px 10px 0 rgb(-78,25,170), -11px 11px 0 rgb(-86,17,162), -12px 12px 0 rgb(-94,9,154), -13px 13px 0 rgb(-102,1,146), -14px 14px 13px rgba(28,219,92,0.48), -14px 14px 1px rgba(28,219,92,0.5), 0px 0px 13px rgba(28,219,92,.2); }
 		 
         .btn {
             display: inline-block;
@@ -876,6 +876,7 @@ background-color: yellow;color: blue;
             margin-bottom: 1.5rem;
         }
 		#img1 {width:200px; height: auto;margin-left: 400px;position:absolute;}
+#bot-mascot {width:180px; height: auto;}
  .chat-input { background-color: gray;color: blue;} 
 #t1 {width:200px;color:red;font-size:20px;}
  </style>
@@ -905,7 +906,7 @@ background-color: yellow;color: blue;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
  
   <style>
-   #bot-mascot { position: fixed; bottom: 20px; right: 20px; width: 100px; height: 100px; z-index: 9999; cursor: pointer; transition: transform 0.3s ease; } #bot-mascot:hover { transform: scale(1.1) rotate(2deg); } #chat-box { position: fixed; bottom: 140px; right: 40px; width: 300px; background-color: #b79b9b; border: 2px solid #000; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; z-index: 9998; } #chat-box.hidden { display: none; } #chat-response { font-size: 0.9rem; color: #333; margin-bottom: 10px; } #chat-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; } #t1 { display: none; } .slideshow { width: 100%; height: 400px; overflow: hidden; position: relative; } .slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; } .slideshow img.active { opacity: 1; z-index: 1; }   
+   #bot-mascot { position: fixed; bottom: 200px; right: 20px; z-index: 9999; cursor: pointer; transition: transform 0.3s ease; } #bot-mascot:hover { transform: scale(1.1) rotate(2deg); } #chat-box { position: fixed; bottom: 140px; right: 40px; width: 300px; background-color: #b79b9b; border: 2px solid #000; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; z-index: 9998; } #chat-box.hidden { display: none; } #chat-response { font-size: 0.9rem; color: #333; margin-bottom: 10px; } #chat-input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; } #t1 { display: none; } .slideshow { width: 100%; height: 400px; overflow: hidden; position: relative; } .slideshow img { width: 100%; height: 100%; object-fit: cover; position: absolute; opacity: 0; transition: opacity 1s ease-in-out; } .slideshow img.active { opacity: 1; z-index: 1; }   
 iframe#suno-audio {display: none;}
   </style>
 </head>
@@ -967,17 +968,18 @@ iframe#suno-audio {display: none;}
 <iframe src="https://suno.com/embed/2cbf7859-434e-435d-857d-be4caa669245" width="760" height="240"><a href="https://suno.com/song/2cbf7859-434e-435d-857d-be4caa669245">Listen on Suno</a></iframe>
 </p>
   <textarea id="t1"></textarea>
-<iframe id="suno-audio" src="" width="0" height="0" allow="autoplay"></iframe>
+<iframe id="suno-audio" src="" width="400" height="400" allow="autoplay"></iframe>
  
  <script>
  
- onload = botsay()​;
+ onload = botsay();
  
     const mascot = document.getElementById('bot-mascot');
     const chatBox = document.getElementById('chat-box');
 
     mascot.addEventListener('click', () => {
       chatBox.classList.toggle('hidden');
+ 
     });
 
     function botsay() {
@@ -992,7 +994,7 @@ iframe#suno-audio {display: none;}
 	  
       const msg = wordset[Math.floor(Math.random() * wordset.length)];
       saybox.value = msg;
-	  setTimeout('bottalk()', '5000');
+	  setTimeout('bottalk()', '8000');
     } 
 
     function bottalk() {
@@ -1000,7 +1002,7 @@ iframe#suno-audio {display: none;}
       const utterance = new SpeechSynthesisUtterance(talk1);
       utterance.lang = "th-TH";
       speechSynthesis.speak(utterance);
-	  setTimeout('opensong()', '5000');
+	  setTimeout('botknow()', '8000');
     }
 	
 function botknow() {	
@@ -1008,14 +1010,27 @@ var sayknow = document.getElementById("t1");
 var know = ['ระบบไฟฟ้าแรงสูง คือ ระบบไฟฟ้าที่มีแรงดันไฟฟ้า เกิน 1,000 โวลท์', ' ระบบไฟฟ้าแรงต่ำ คือ ระบบไฟฟ้าที่มีแรงดันไฟฟ้าไม่เกิน 1,000 โวลท์', ' โวลท์ (Volt.) คือ หน่วยวัดแรงดันไฟฟ้า', ' แอมแปร์ ( Amp.) คือ หน่วยวัดกระแสไฟฟ้า', ' วัตต์ (Watt.) คือ หน่วยของกำลังไฟฟ้าที่ใช้จริง', ' หน่วย (Unit) คือ หน่วยของกำลังไฟฟ้าที่ใช้ ต่อชั่วโมง มีอุปกรณ์ที่ใช้วัด คือ กิโลวัตต์ฮอร์มิเตอร์', 'ระบบ 1 เฟส จะมี 2 สายในระบบ ประกอบด้วย สาย LINE มีไฟ 1 เส้น และสาย Neutral ไม่มีไฟ 1 เส้น มีแรงดันไฟฟ้า 220 – 230 โวลท์ มีความถี่ 50 เฮิร์ซ Hz', ' ระบบ 3 เฟส จะมี 4 สายในระบบ ประกอบด้วย สาย LINE มีไฟ 3 เส้น และสายนิวตรอน ไม่มีไฟ 1 เส้น มีแรงดันไฟฟ้าระหว่าง สาย LINE กับ LINE 380 – 400 โวลท์ และแรงดันไฟฟ้าระหว่างสาย LINE กับ Neutral 220 – 230 โวลท์ และมีความถี่ 50 เฮิร์ซ Hz เช่นเดียวกัน', ' สายดิน หรือ GROUND มีทั้ง 2 ระบบ ติดตั้งเข้าไปในระบบเพื่อความปลอดภัยของระบบ สายดินจะต้องต่อเข้าไปกับพื้นโลก ตามมาตรฐานกำหนด'];		  
 var getknow = know[Math.floor(Math.random() * know.length)];		 
 sayknow.value = getknow;
-
+setTimeout('opensong()', '8000');		 
 }
 
 function opensong() {
+var framer = document.getElementById('suno-audio');
  var linksong = 'https://suno.com/embed/9762f953-377c-4f5e-ae7b-a1b2bd0999e3?autoplay=1&loop=1'; 
-document.getElementById('suno-audio').src = linksong;
-setTimeout('botsay()', '5000');		 
+ var taparadox = 'https://files2.heygen.ai/aws_pacific/avatar_tmp/05aa79d83a9440c3bcfc70d84a02b2c3/d1c3608cac374d6d83f130f41ba29105.mp4?Expires=1753156142&Signature=LrBBS-0EK-n4xaA32F7zGenN-HYYSH1yHlHzY2uRf44COnVJy7-21ZJS4VVn6eGgBODRdNo5QParCcozx8Tx2r-VLEJUGKDOwhyF3DINrYWF-fOYYTvWAOGfhCTLGmaHO~2O2lzD5E5otYDQ6HpzpPBJGw-fsILxsDat8xVPeuoYdz1Evl0P-6g1nmzc8hd7ckpv1RhfK7x0wWKCnP~oI0eHnwDRg0wGmFVBHwNh3WJRXIB7weJ1oU-E93VNWQlw6ofgKUv3jKBJii5BNX8-1OtQffRioBZkE6bE2mC1ZhhG6zz-hwtoQiplIryBE7RL-GLo3uh-JM76Yyn31l80eA__&Key-Pair-Id=K38HBHX5LX3X2H';
+ 
+framer.style.display = 'block'; 
+framer.src = taparadox;
+setTimeout('closesong()', '8000');
 }
+
+function closesong() {
+ var closeframer = document.getElementById('suno-audio').style; 
+ closeframer.display = 'none';
+setTimeout('botsay()', '8000'); 
+}
+
+
+
 
     const chatInput = document.getElementById("chat-input");
     const chatResponse = document.getElementById("chat-response");
